@@ -28,7 +28,7 @@ module Prelude.General(
 
   , (+), (-), (*), (/), mod
   , seq, ($!)
-  , undefined
+  , undefined, error
   , fromIntegral
 
   , if'
@@ -97,7 +97,7 @@ import           Text.Show
 import qualified Prelude
 import           Prelude ( (+), (-), (*), (/), mod
                          , seq, ($!)
-                         , undefined, fromIntegral )
+                         , undefined, error, fromIntegral )
 
 -- | An either/maybe equivalent for Bool, often known as if'
 if' :: a -- ^ Returned if the bool is True
@@ -109,3 +109,9 @@ if' _ a False = a
 
 filter :: (Monad m, Monoid (m a), Foldable t) => (a -> Bool) -> t a -> m a
 filter p = foldMap (\a -> if' (return a) mempty (p a))
+
+-- instance Foldable ((,) a) where
+--     foldMap f (_, x) = f x
+
+-- instance Traversable ((,) a) where
+--     traverse f (a, x) = (,) a <$> f x
