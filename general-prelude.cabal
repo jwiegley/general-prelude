@@ -1,5 +1,5 @@
 Name:                general-prelude
-Version:             0.1.1
+Version:             0.1.2
 Synopsis:            Prelude replacement using generalized type classes where possible
 Description:         This Prelude prefers more general and performance-oriented types,
                      such as Category, Foldable, Traversable, Data.Text and Control.Lens.
@@ -17,7 +17,7 @@ Library
   default-extensions: NoImplicitPrelude
 
   Build-Depends:        base >= 4 && < 5
-                      , lens            >= 3.0
+                      , lens            >= 3.7
                       , pointless-fun   >= 1.1.0.1
                       , strict          >= 0.3.2
                       , system-filepath >= 0.4.7

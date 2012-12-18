@@ -40,8 +40,7 @@ import           Control.Arrow ( first
                                , second )
 import           Control.Category
 import           Control.Exception
-import           Control.Lens hiding ( lefts
-                                     , rights )
+import           Control.Lens
 import           Control.Monad hiding ( forM
                                       , forM_
                                       , mapM
